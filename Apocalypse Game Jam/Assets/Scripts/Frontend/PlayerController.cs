@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public LayerMask terrainMask;
     public bool isSliding;
+    public Animator anim;
+    public SpriteRenderer ren;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +28,27 @@ public class PlayerController : MonoBehaviour
         //sliding control
         if (!isSliding && isGrounded && Input.GetAxis("Vertical") < -0.1f) {
             isSliding = true;
+            anim.SetBool("Sliding", true);
             transform.rotation = Quaternion.Euler(0, 0, 90);
         } else if (isSliding && Input.GetAxis("Vertical") >= -0.1f && CanStand()) {
             isSliding = false;
+            anim.SetBool("Sliding", false);
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         //move control
         if (!isSliding) {
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * runSpeed, rb.velocity.y);
+            if (System.Math.Abs(rb.velocity.x) > 0.01f) {
+                anim.SetBool("Running", true);
+                if (rb.velocity.x > 0) {
+                    ren.flipX = false;
+                } else {
+                    ren.flipX = true;
+                }
+            } else {
+                anim.SetBool("Running", false);
+            }
         } else {
             SlopeSlide();
             if (System.Math.Abs(rb.velocity.x) < runSpeed * 0.25f && rb.velocity.x > 0.05f) {
@@ -51,6 +65,8 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && Input.GetKeyDown(KeyCode.Space)) {
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength + 0.5f * System.Math.Abs(rb.velocity.x));
             isSliding = false;
+            anim.SetBool("Sliding", false);
+            anim.SetTrigger("Jump");
             //rb.AddForce(new Vector2(0, jumpStrength));
         }
 
