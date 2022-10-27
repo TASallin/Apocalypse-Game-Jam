@@ -183,6 +183,9 @@ TextureImporter:
       213: 6175341775333907600
     second: level1_buildings_tilesheet_59
   - first:
+      213: -1901331378018540170
+    second: level1_buildings_tilesheet_60
+  - first:
       213: 7247384259955725825
     second: level1_buildings_tilesheet_61
   - first:
@@ -199,31 +202,31 @@ TextureImporter:
     second: level1_buildings_tilesheet_65
   - first:
       213: -2513591537107830670
-    second: _scaffolding1
+    second: level1_buildings_tilesheet_66
   - first:
       213: 4407222394635577577
-    second: _scaffolding2
+    second: level1_buildings_tilesheet_67
   - first:
       213: -6531791361902678539
-    second: _scaffolding3
+    second: level1_buildings_tilesheet_68
   - first:
       213: 6680422257274363055
-    second: _scaffolding4
+    second: level1_buildings_tilesheet_69
   - first:
       213: -6308951316971046114
-    second: _scaffolding5
+    second: level1_buildings_tilesheet_70
   - first:
       213: 8464665562196898154
-    second: _scaffolding6
+    second: level1_buildings_tilesheet_71
   - first:
       213: -9193358309145585490
-    second: _scaffolding7
+    second: level1_buildings_tilesheet_72
   - first:
       213: 3938238804593422503
-    second: _paper1
+    second: level1_buildings_tilesheet_73
   - first:
       213: -7782743831779668091
-    second: _paper2
+    second: level1_buildings_tilesheet_74
   - first:
       213: -7251605815211022910
     second: level1_buildings_tilesheet_75
@@ -235,31 +238,31 @@ TextureImporter:
     second: level1_buildings_tilesheet_77
   - first:
       213: 1191918470220856318
-    second: _scaffolding8
+    second: level1_buildings_tilesheet_78
   - first:
       213: 5201655474696163019
-    second: _scaffolding9
+    second: level1_buildings_tilesheet_79
   - first:
       213: -5651946335923675742
-    second: _scaffolding10
+    second: level1_buildings_tilesheet_80
   - first:
       213: 4197155327694148376
-    second: _scaffolding11
+    second: level1_buildings_tilesheet_81
   - first:
       213: -6495749852570047386
-    second: _scaffolding12
+    second: level1_buildings_tilesheet_82
   - first:
       213: 8512046470854993382
-    second: _scaffolding13
+    second: level1_buildings_tilesheet_83
   - first:
       213: -8197977680526801455
-    second: _scaffolding14
+    second: level1_buildings_tilesheet_84
   - first:
       213: 5346254230334239935
-    second: _paper3
+    second: level1_buildings_tilesheet_85
   - first:
       213: 8295835694473123719
-    second: _paper4
+    second: level1_buildings_tilesheet_86
   - first:
       213: 5925137673755014794
     second: level1_buildings_tilesheet_87
@@ -271,22 +274,22 @@ TextureImporter:
     second: level1_buildings_tilesheet_89
   - first:
       213: 7710059068760103429
-    second: _scaffolding15
+    second: level1_buildings_tilesheet_90
   - first:
       213: -1582163467450948680
-    second: _scaffolding16
+    second: level1_buildings_tilesheet_91
   - first:
       213: -996858494430106105
-    second: _scaffolding17
+    second: level1_buildings_tilesheet_92
   - first:
       213: 6734408388885654449
-    second: _scaffolding18
+    second: level1_buildings_tilesheet_93
   - first:
       213: -4636995380524993426
-    second: _paper5
+    second: level1_buildings_tilesheet_94
   - first:
       213: 3931957601929056085
-    second: _paper6
+    second: level1_buildings_tilesheet_95
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -317,7 +320,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -331,7 +334,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1199,9 +1202,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 256
+        y: 320
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1220,9 +1223,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 255
-        width: 127
-        height: 129
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1232,6 +1235,27 @@ TextureImporter:
       bones: []
       spriteID: 53533d26c34d0e710800000000000000
       internalID: 1720608413476664629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_buildings_tilesheet_41
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b56edb2e3b24f40800000000000000
+      internalID: 5711325063889181522
       vertices: []
       indices: 
       edges: []
@@ -1379,6 +1403,48 @@ TextureImporter:
       bones: []
       spriteID: ad4b0855582afd2d0800000000000000
       internalID: -3251701712389360422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_buildings_tilesheet_49
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3932f3ccd30d59d0800000000000000
+      internalID: -2784064747929978562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_buildings_tilesheet_50
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095413bd81f192200800000000000000
+      internalID: 155689853738108304
       vertices: []
       indices: 
       edges: []
@@ -1678,7 +1744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding1
+      name: level1_buildings_tilesheet_66
       rect:
         serializedVersion: 2
         x: 192
@@ -1699,7 +1765,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding2
+      name: level1_buildings_tilesheet_67
       rect:
         serializedVersion: 2
         x: 256
@@ -1720,7 +1786,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding3
+      name: level1_buildings_tilesheet_68
       rect:
         serializedVersion: 2
         x: 320
@@ -1741,7 +1807,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding4
+      name: level1_buildings_tilesheet_69
       rect:
         serializedVersion: 2
         x: 384
@@ -1762,7 +1828,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding5
+      name: level1_buildings_tilesheet_70
       rect:
         serializedVersion: 2
         x: 448
@@ -1783,7 +1849,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding6
+      name: level1_buildings_tilesheet_71
       rect:
         serializedVersion: 2
         x: 512
@@ -1804,7 +1870,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding7
+      name: level1_buildings_tilesheet_72
       rect:
         serializedVersion: 2
         x: 576
@@ -1825,7 +1891,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _paper1
+      name: level1_buildings_tilesheet_73
       rect:
         serializedVersion: 2
         x: 640
@@ -1846,7 +1912,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _paper2
+      name: level1_buildings_tilesheet_74
       rect:
         serializedVersion: 2
         x: 704
@@ -1930,7 +1996,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding8
+      name: level1_buildings_tilesheet_78
       rect:
         serializedVersion: 2
         x: 192
@@ -1951,7 +2017,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding9
+      name: level1_buildings_tilesheet_79
       rect:
         serializedVersion: 2
         x: 256
@@ -1972,7 +2038,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding10
+      name: level1_buildings_tilesheet_80
       rect:
         serializedVersion: 2
         x: 320
@@ -1993,7 +2059,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding11
+      name: level1_buildings_tilesheet_81
       rect:
         serializedVersion: 2
         x: 384
@@ -2014,7 +2080,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding12
+      name: level1_buildings_tilesheet_82
       rect:
         serializedVersion: 2
         x: 448
@@ -2035,7 +2101,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding13
+      name: level1_buildings_tilesheet_83
       rect:
         serializedVersion: 2
         x: 512
@@ -2056,7 +2122,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding14
+      name: level1_buildings_tilesheet_84
       rect:
         serializedVersion: 2
         x: 576
@@ -2077,7 +2143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _paper3
+      name: level1_buildings_tilesheet_85
       rect:
         serializedVersion: 2
         x: 640
@@ -2098,7 +2164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _paper4
+      name: level1_buildings_tilesheet_86
       rect:
         serializedVersion: 2
         x: 704
@@ -2182,7 +2248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding15
+      name: level1_buildings_tilesheet_90
       rect:
         serializedVersion: 2
         x: 192
@@ -2203,7 +2269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding16
+      name: level1_buildings_tilesheet_91
       rect:
         serializedVersion: 2
         x: 256
@@ -2224,7 +2290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding17
+      name: level1_buildings_tilesheet_92
       rect:
         serializedVersion: 2
         x: 320
@@ -2245,7 +2311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _scaffolding18
+      name: level1_buildings_tilesheet_93
       rect:
         serializedVersion: 2
         x: 384
@@ -2266,7 +2332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _paper5
+      name: level1_buildings_tilesheet_94
       rect:
         serializedVersion: 2
         x: 640
@@ -2287,7 +2353,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _paper6
+      name: level1_buildings_tilesheet_95
       rect:
         serializedVersion: 2
         x: 704
