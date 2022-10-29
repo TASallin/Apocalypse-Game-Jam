@@ -7,7 +7,6 @@ public class RainDamage : MonoBehaviour
     public ToxicMeter toxicMeter;
     public int damage = 2;
     public float totalTime = 0;
-
     public int timeVariable = 2;
 
     // Start is called before the first frame update
@@ -45,6 +44,14 @@ public class RainDamage : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        toxicMeter.OutOfRain(damage);
+        //toxicMeter.OutOfRain(damage);
+
+        for (int i = 0; i < toxicMeter.toxic; i++) {
+            toxicMeter.toxic -= damage;
+
+            if (toxicMeter.toxic <= 0) {
+                break;
+            }
+        }
     }
 }
