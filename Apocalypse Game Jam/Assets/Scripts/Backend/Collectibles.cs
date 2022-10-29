@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
+[Serializable]
 public class Collectibles
 {
     public bool[] papers;
-    public bool[] bottles;
 
     public Collectibles() {
-        papers = new bool[12];
-        bottles = new bool[12];
+        papers = new bool[9];
     }
 }

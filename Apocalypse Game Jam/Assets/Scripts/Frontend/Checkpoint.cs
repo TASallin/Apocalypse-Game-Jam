@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
+[Serializable]
 public class Checkpoint : MonoBehaviour
 {
     public Vector3 spawnPoint;
