@@ -240,7 +240,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &186951202
@@ -269,6 +269,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f958789206872fc46918a2800a9c8160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runSpeed: 1
+  jumpStrength: 1
+  rb: {fileID: 186951199}
+  collider: {fileID: 186951200}
+  isGrounded: 0
+  terrainMask:
+    serializedVersion: 2
+    m_Bits: 0
+  isSliding: 0
+  anim: {fileID: 186951204}
+  ren: {fileID: 186951201}
 --- !u!95 &186951204
 Animator:
   serializedVersion: 3
@@ -733,7 +744,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c9c4a135cfe08245b7143c018dd0100, type: 2}
+  - {fileID: 2100000, guid: 5098f783474e48747893b8c580a29dca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -992,6 +1003,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7dccd7bb4b1c045a2db4fe49eb97e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftBound: 0
+  rightBound: 0
+  topBound: 0
+  bottomBound: 0
+  player: {fileID: 0}
 --- !u!1 &1695016939
 GameObject:
   m_ObjectHideFlags: 0
