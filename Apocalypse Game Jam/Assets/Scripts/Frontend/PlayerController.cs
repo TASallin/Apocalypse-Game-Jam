@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed;
     public float jumpStrength;
     public Rigidbody2D rb;
-    public Collider2D collider;
+    public BoxCollider2D collider;
     public bool isGrounded;
     public LayerMask terrainMask;
     public bool isSliding;
@@ -23,17 +23,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f) {
+            return;
+        }
+
         GroundCheck();
 
         //sliding control
         if (!isSliding && isGrounded && Input.GetAxis("Vertical") < -0.1f) {
             isSliding = true;
             anim.SetBool("Sliding", true);
-            transform.rotation = Quaternion.Euler(0, 0, 90);
+            collider.size = new Vector2(collider.size.y, collider.size.x);
+            //transform.rotation = Quaternion.Euler(0, 0, 90);
         } else if (isSliding && Input.GetAxis("Vertical") >= -0.1f && CanStand()) {
             isSliding = false;
             anim.SetBool("Sliding", false);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            collider.size = new Vector2(collider.size.y, collider.size.x);
+            //transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         //move control
@@ -63,10 +69,14 @@ public class PlayerController : MonoBehaviour
 
         //jump control
         if (isGrounded && Input.GetKeyDown(KeyCode.Space)) {
-            rb.velocity = new Vector2(rb.velocity.x, jumpStrength + 0.5f * System.Math.Abs(rb.velocity.x));
+            rb.velocity = new Vector2(rb.velocity.x, jumpStrength + 0.25f * System.Math.Abs(rb.velocity.x));
+            if (isSliding) {
+                collider.size = new Vector2(collider.size.y, collider.size.x);
+            }
             isSliding = false;
             anim.SetBool("Sliding", false);
             anim.SetTrigger("Jump");
+            anim.SetBool("Landing", false);
             //rb.AddForce(new Vector2(0, jumpStrength));
         }
 
@@ -86,11 +96,16 @@ public class PlayerController : MonoBehaviour
     public void GroundCheck() {
         RaycastHit2D raycast = Physics2D.BoxCast(collider.bounds.center, new Vector2(collider.bounds.size.x - 0.05f, collider.bounds.size.y - 0.05f), 0f, Vector2.down, 0.3f, terrainMask);
         if (raycast.collider == null) {
-            //Debug.Log("wow");
+            if (isGrounded == true) {
+                anim.SetBool("Landing", false);
+            }
             isGrounded = false;
         } else {
-            //Debug.Log("No");
+            if (isGrounded == false) {
+                anim.SetBool("Landing", true);
+            }
             isGrounded = true;
+            
         }
     }
 
