@@ -55,25 +55,19 @@ public class ToxicMeter : MonoBehaviour
     public void OutOfRain (int amount) {
         toxic -= amount;
 
-        if (toxic <= 0) {
-            ToxicLvl1.gameObject.SetActive(false);
-            ToxicLvl2.gameObject.SetActive(false);
-            ToxicLvl3.gameObject.SetActive(false);
-        }
-
-        if (toxic >= toxicThreshold / 4) {
+        if (toxic <= toxicThreshold / 4) {
             ToxicLvl1.gameObject.SetActive(true);
             ToxicLvl2.gameObject.SetActive(false);
             ToxicLvl3.gameObject.SetActive(false);
         }
 
-        if (toxic >= toxicThreshold / 3) {
+        if (toxic <= toxicThreshold / 3) {
             ToxicLvl1.gameObject.SetActive(false);
             ToxicLvl2.gameObject.SetActive(true);
             ToxicLvl3.gameObject.SetActive(false);
         }
 
-        if (toxic >= toxicThreshold / 2) {
+        if (toxic <= toxicThreshold / 2) {
             ToxicLvl1.gameObject.SetActive(false);
             ToxicLvl2.gameObject.SetActive(false);
             ToxicLvl3.gameObject.SetActive(true);
