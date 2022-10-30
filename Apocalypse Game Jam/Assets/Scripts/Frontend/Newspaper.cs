@@ -32,6 +32,7 @@ public class Newspaper : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other) {
         if (Input.GetKey(KeyCode.E)) {
             Game.instance.collectibles.papers[index] = true;
+            Game.instance.Save();
             gameObject.SetActive(false);
         }
     }
