@@ -7,6 +7,7 @@ public class Lever : MonoBehaviour {
     public GameObject platformOff;
     public GameObject prompt;
     public bool inRange;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start() {
@@ -16,6 +17,7 @@ public class Lever : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (inRange && Input.GetKeyDown(KeyCode.E)) {
+            anim.SetTrigger("Press");
             if (platformOn.activeInHierarchy) {
                 platformOn.SetActive(false);
                 platformOff.SetActive(true);
