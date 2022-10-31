@@ -10,6 +10,8 @@ public class ToxicMeter : MonoBehaviour
     public GameObject ToxicLvl1;
     public GameObject ToxicLvl2;
     public GameObject ToxicLvl3;
+    public Animator anim;
+    public PlayerController pc;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,9 @@ public class ToxicMeter : MonoBehaviour
     }
 
     public void InRain(int amount) {
+        if (pc.disableControls) {
+            return;
+        }
         toxic += amount;
 
         if (toxic >= toxicThreshold / 4) {
@@ -48,7 +53,10 @@ public class ToxicMeter : MonoBehaviour
         }
 
         if (toxic >= toxicThreshold) {
-            Destroy(gameObject);
+            anim.SetTrigger("DieRain");
+            pc.disableControls = true;
+            toxic = defaultToxic;
+            ToxicLvl3.gameObject.SetActive(false);
         }
     }
 

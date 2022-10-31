@@ -7,6 +7,7 @@ public class BreakablePlatform : MonoBehaviour
     public float duration;
     float countdown;
     bool isStanding;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +22,25 @@ public class BreakablePlatform : MonoBehaviour
         if (isStanding) {
             countdown -= Time.deltaTime;
             if (countdown <= 0) {
-                gameObject.SetActive(false); //placeholder until animation/etc is decided
+                anim.SetTrigger("Break");
             }
         }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        isStanding = true;
+        if (other.gameObject.tag == "Player" && other.transform.position.y > transform.position.y + 0.6f) {
+            isStanding = true;
+        }
     }
 
     void OnCollisionExit2D(Collision2D other) {
-        isStanding = false;
+        if (other.gameObject.tag == "Player") {
+            isStanding = false;
+        }
+    }
+
+    public void Broken() {
+        gameObject.SetActive(false);
     }
 
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3063917488390942990}
   - component: {fileID: 5409930643867056593}
   - component: {fileID: 9009356440120918090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: breaking_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
+  anim: {fileID: 3063917488390942990}
 --- !u!61 &9009356440120918090
 BoxCollider2D:
   m_ObjectHideFlags: 0
