@@ -13,9 +13,6 @@ public class PlayerController : MonoBehaviour
     public bool isSliding;
     public Animator anim;
     public SpriteRenderer ren;
-    public bool disableControls;
-    public LevelReset reset;
-    public GameObject credits;
 
     // Start is called before the first frame update
     void Start()
@@ -30,20 +27,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
         GroundCheck();
-
-        if (rb.gravityScale > 0.1f && IsDead()) {
-            disableControls = true;
-            rb.velocity = new Vector2(0, 0);
-            rb.gravityScale = 0.1f;
-            anim.SetTrigger("Die");
-            return;
-        }
-
-        if (disableControls) {
-            return;
-        }
 
         //sliding control
         if (!isSliding && isGrounded && Input.GetAxis("Vertical") < -0.1f) {
@@ -96,7 +80,11 @@ public class PlayerController : MonoBehaviour
             //rb.AddForce(new Vector2(0, jumpStrength));
         }
 
-        
+        if (IsDead()) {
+            rb.velocity = new Vector2(0, 0);
+            isGrounded = false;
+            transform.position = Game.instance.lastCheckpoint.spawnPoint;
+        }
     }
 
     //checks if the player is below the death (water) plane
@@ -119,21 +107,6 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             
         }
-    }
-
-    public void Respawn() {
-        if (Game.instance.creditsFlag) {
-            credits.SetActive(true);
-        } else {
-            disableControls = false;
-            rb.gravityScale = 2f;
-            isGrounded = false;
-            transform.position = Game.instance.lastCheckpoint.spawnPoint;
-            if (reset != null) {
-                reset.Reset();
-            }
-        }
-        
     }
 
     //checks if the player is on a slope while sliding and sets their velocity accordingly

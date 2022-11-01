@@ -14,16 +14,11 @@ public class Game
     [NonSerialized]
     public Checkpoint lastCheckpoint;
     public Collectibles collectibles;
-    public float volume;
-    [NonSerialized]
-    public bool creditsFlag;
 
     public Game() {
         level = 1;
         waterLevel = -10;
         collectibles = new Collectibles();
-        volume = 1f;
-        creditsFlag = false;
     }
 
     public void Save() {

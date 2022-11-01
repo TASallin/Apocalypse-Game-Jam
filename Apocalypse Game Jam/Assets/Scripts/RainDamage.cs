@@ -44,17 +44,12 @@ public class RainDamage : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        Invoke("Heal", 10.0f);
-    }
+        //toxicMeter.OutOfRain(damage);
 
-    void Heal() {
-        for (int i = 0; i < toxicMeter.toxic + damage; i++) {
+        for (int i = 0; i < toxicMeter.toxic; i++) {
             toxicMeter.toxic -= damage;
 
             if (toxicMeter.toxic <= 0) {
-                toxicMeter.ToxicLvl1.gameObject.SetActive(false);
-                toxicMeter.ToxicLvl2.gameObject.SetActive(false);
-                toxicMeter.ToxicLvl3.gameObject.SetActive(false);
                 break;
             }
         }

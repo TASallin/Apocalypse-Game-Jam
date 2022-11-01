@@ -10,8 +10,6 @@ public class ToxicMeter : MonoBehaviour
     public GameObject ToxicLvl1;
     public GameObject ToxicLvl2;
     public GameObject ToxicLvl3;
-    public Animator anim;
-    public PlayerController pc;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +27,6 @@ public class ToxicMeter : MonoBehaviour
     }
 
     public void InRain(int amount) {
-        if (pc.disableControls) {
-            return;
-        }
         toxic += amount;
 
         if (toxic >= toxicThreshold / 4) {
@@ -53,29 +48,32 @@ public class ToxicMeter : MonoBehaviour
         }
 
         if (toxic >= toxicThreshold) {
-            anim.SetTrigger("DieRain");
-            pc.disableControls = true;
-            toxic = defaultToxic;
-            ToxicLvl3.gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
     public void OutOfRain (int amount) {
         toxic -= amount;
 
-        if (toxic <= toxicThreshold / 4) {
+        if (toxic <= 0) {
+            ToxicLvl1.gameObject.SetActive(false);
+            ToxicLvl2.gameObject.SetActive(false);
+            ToxicLvl3.gameObject.SetActive(false);
+        }
+
+        if (toxic >= toxicThreshold / 4) {
             ToxicLvl1.gameObject.SetActive(true);
             ToxicLvl2.gameObject.SetActive(false);
             ToxicLvl3.gameObject.SetActive(false);
         }
 
-        if (toxic <= toxicThreshold / 3) {
+        if (toxic >= toxicThreshold / 3) {
             ToxicLvl1.gameObject.SetActive(false);
             ToxicLvl2.gameObject.SetActive(true);
             ToxicLvl3.gameObject.SetActive(false);
         }
 
-        if (toxic <= toxicThreshold / 2) {
+        if (toxic >= toxicThreshold / 2) {
             ToxicLvl1.gameObject.SetActive(false);
             ToxicLvl2.gameObject.SetActive(false);
             ToxicLvl3.gameObject.SetActive(true);

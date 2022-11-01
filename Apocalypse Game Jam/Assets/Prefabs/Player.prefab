@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpStrength: 10
+  jumpStrength: 5
   rb: {fileID: 3705662087900215714}
   collider: {fileID: 3705662087900215709}
   isGrounded: 0
@@ -109,9 +109,6 @@ MonoBehaviour:
   isSliding: 0
   anim: {fileID: 3705662087900215705}
   ren: {fileID: 3705662087900215708}
-  disableControls: 0
-  reset: {fileID: 0}
-  credits: {fileID: 0}
 --- !u!50 &3705662087900215714
 Rigidbody2D:
   serializedVersion: 4
@@ -127,7 +124,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: bb2f9adbd69bb6b46aa7a4c3f92b2fa8, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0

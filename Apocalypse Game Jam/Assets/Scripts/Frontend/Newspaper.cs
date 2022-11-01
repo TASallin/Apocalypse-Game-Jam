@@ -5,14 +5,12 @@ using UnityEngine;
 public class Newspaper : MonoBehaviour {
     public int index;
     public GameObject prompt;
-    public PauseMenu pause;
 
     // Start is called before the first frame update
     void Start() {
         if (Game.instance == null || !Game.instance.collectibles.papers[index]) {
             gameObject.SetActive(true);
         } else {
-            
             gameObject.SetActive(false);//if the paper is already collected
         }
     }
@@ -35,8 +33,6 @@ public class Newspaper : MonoBehaviour {
         if (Input.GetKey(KeyCode.E)) {
             Game.instance.collectibles.papers[index] = true;
             Game.instance.Save();
-            pause.Pause();
-            pause.PaperButton(index);
             gameObject.SetActive(false);
         }
     }
